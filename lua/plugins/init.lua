@@ -11,3 +11,4 @@ local plugins = {
 	  lazy = false,
 	}
 }
+return plugins
