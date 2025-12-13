@@ -1,7 +1,7 @@
 local opts = { noremap = true, silent = true }
 
 -- jk でインサートモードを抜ける
-vim.keymap.set('i', 'jk', '<ESC>', opts)
+vim.keymap.set('i', '<leader>jk', '<ESC>', opts)
 
 -- 検索ハイライトを消す (Leader + h)
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>', opts)
@@ -46,7 +46,7 @@ vim.keymap.set({ 'n', 't' }, '<C-\\>', '<cmd>ToggleTerm<CR>', opts)
 -- ターミナルモードでの操作
 -- Esc または jk でターミナルモードから抜ける
 vim.keymap.set('t', '<esc>', [[<C-\><C-n>]], opts)
-vim.keymap.set('t', 'jk', [[<C-\><C-n>]], opts)
+vim.keymap.set('t', '<leader>jk', [[<C-\><C-n>]], opts)
 
 -- ターミナルウィンドウ間の移動
 vim.keymap.set('t', '<C-h>', [[<Cmd>wincmd h<CR>]], opts)
