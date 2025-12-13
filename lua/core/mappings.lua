@@ -63,3 +63,33 @@ vim.keymap.set('n', '<leader>fg', function() require('telescope.builtin').live_g
 vim.keymap.set('n', '<leader>fb', function() require('telescope.builtin').buffers() end, opts)
 -- ヘルプ検索 (Leader + fh)
 vim.keymap.set('n', '<leader>fh', function() require('telescope.builtin').help_tags() end, opts)
+
+-- Oil
+-- 親ディレクトリを開く (-)
+vim.keymap.set('n', '<leader>e', '<CMD>Oil<CR>', opts)
+
+-- Oil バッファ内でのキーマップ
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "oil",
+    callback = function()
+        local actions = require("oil.actions")
+        local buf_opts = { buffer = true, silent = true }
+
+        vim.keymap.set("n", "g?", actions.show_help.callback, buf_opts)
+        vim.keymap.set("n", "<CR>", actions.select.callback, buf_opts)
+        vim.keymap.set("n", "<C-v>", actions.select_vsplit.callback, buf_opts)
+        vim.keymap.set("n", "<C-x>", actions.select_split.callback, buf_opts)
+        vim.keymap.set("n", "<C-t>", actions.select_tab.callback, buf_opts)
+        vim.keymap.set("n", "<C-p>", actions.preview.callback, buf_opts)
+        vim.keymap.set("n", "<C-c>", actions.close.callback, buf_opts)
+        vim.keymap.set("n", "R", actions.refresh.callback, buf_opts)
+        vim.keymap.set("n", "-", actions.parent.callback, buf_opts)
+        vim.keymap.set("n", "_", actions.open_cwd.callback, buf_opts)
+        vim.keymap.set("n", "`", actions.cd.callback, buf_opts)
+        vim.keymap.set("n", "~", actions.tcd.callback, buf_opts)
+        vim.keymap.set("n", "gs", actions.change_sort.callback, buf_opts)
+        vim.keymap.set("n", "gx", actions.open_external.callback, buf_opts)
+        vim.keymap.set("n", "g.", actions.toggle_hidden.callback, buf_opts)
+        vim.keymap.set("n", "g\\", actions.toggle_trash.callback, buf_opts)
+    end,
+})
