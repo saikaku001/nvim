@@ -10,13 +10,17 @@ map('i', '<leader>jk', '<ESC>', 'Exit insert mode')
 map('n', '<leader>h', ':nohlsearch<CR>', 'Clear search highlights')
 
 -- ファイル保存 (Leader + w)
-map('n', '<leader>w', ':w<CR>', 'Save file')
+map('n', '<leader>s', ':w<CR>', 'Save file')
 
 -- ウィンドウ間の移動（Ctrl + H/J/K/L）
 map('n', '<C-h>', '<C-w>h', 'Move to left window')
 map('n', '<C-j>', '<C-w>j', 'Move to lower window')
 map('n', '<C-k>', '<C-w>k', 'Move to upper window')
 map('n', '<C-l>', '<C-w>l', 'Move to right window')
+
+-- 画面分割
+map('n', '<leader>ww', ':vsplit<CR>', 'Vertical split')
+map('n', '<leader>wt', ':split<CR>', 'Horizontal split')
 
 -- バッファの移動 (Shift + h/l, Tab)
 map('n', '<S-h>', '<cmd>BufferLineCyclePrev<CR>', 'Previous buffer')
