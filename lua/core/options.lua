@@ -23,3 +23,4 @@ vim.g.clipboard = {
     ["*"] = paste,
   },
 }
+
