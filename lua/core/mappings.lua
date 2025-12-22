@@ -139,3 +139,8 @@ map('n', 'sa', '<Plug>(operator-sandwich-add)', 'Add surrounding')
 map('n', 'sd', '<Plug>(operator-sandwich-delete)', 'Delete surrounding')
 map('n', 'sc', '<Plug>(operator-sandwich-replace)', 'Change surrounding')
 map('v', 'S', '<Plug>(operator-sandwich-add)', 'Add surrounding in visual mode')
+
+-- Copilot Chat
+-- モデル選択 (Leader + cm)
+map('n', '<leader>cm', ':CopilotChatModels<CR>', 'Copilot Chat Models')
+map('v', '<leader>cm', ':CopilotChatModels<CR>', 'Copilot Chat Models')
