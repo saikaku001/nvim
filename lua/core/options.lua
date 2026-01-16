@@ -8,7 +8,8 @@ vim.o.cursorcolumn = true
 vim.opt.termguicolors = true
 vim.opt.winblend = 10 -- ウィンドウの不透明度
 vim.opt.pumblend = 10 -- ポップアップメニューの不透明度
-
+vim.opt.encoding = "utf-8"
+vim.opt.fileencoding = "utf-8"
 
 vim.o.clipboard = "unnamedplus"
 
